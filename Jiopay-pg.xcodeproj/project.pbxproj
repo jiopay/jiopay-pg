@@ -10,6 +10,8 @@
 		A04946AC26C5384B00FAD831 /* Jiopay_pg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A04946A226C5384B00FAD831 /* Jiopay_pg.framework */; };
 		A04946B126C5384B00FAD831 /* Jiopay_pgTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04946B026C5384B00FAD831 /* Jiopay_pgTests.swift */; };
 		A04946B326C5384B00FAD831 /* Jiopay_pg.h in Headers */ = {isa = PBXBuildFile; fileRef = A04946A526C5384B00FAD831 /* Jiopay_pg.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A04946C026C53F3800FAD831 /* JioPayPGViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04946BE26C53F3800FAD831 /* JioPayPGViewController.swift */; };
+		A04946C126C53F3800FAD831 /* JioPayPGViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04946BF26C53F3800FAD831 /* JioPayPGViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		A04946AB26C5384B00FAD831 /* Jiopay-pgTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Jiopay-pgTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04946B026C5384B00FAD831 /* Jiopay_pgTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jiopay_pgTests.swift; sourceTree = "<group>"; };
 		A04946B226C5384B00FAD831 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A04946BE26C53F3800FAD831 /* JioPayPGViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JioPayPGViewController.swift; sourceTree = "<group>"; };
+		A04946BF26C53F3800FAD831 /* JioPayPGViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JioPayPGViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				A04946A526C5384B00FAD831 /* Jiopay_pg.h */,
 				A04946A626C5384B00FAD831 /* Info.plist */,
+				A04946BE26C53F3800FAD831 /* JioPayPGViewController.swift */,
+				A04946BF26C53F3800FAD831 /* JioPayPGViewController.xib */,
 			);
 			path = "Jiopay-pg";
 			sourceTree = "<group>";
@@ -147,6 +153,7 @@
 				TargetAttributes = {
 					A04946A126C5384B00FAD831 = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 					};
 					A04946AA26C5384B00FAD831 = {
 						CreatedOnToolsVersion = 12.3;
@@ -177,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A04946C126C53F3800FAD831 /* JioPayPGViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A04946C026C53F3800FAD831 /* JioPayPGViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +350,7 @@
 		A04946B726C5384B00FAD831 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -356,6 +366,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.prashant.Jiopay-pg";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +375,7 @@
 		A04946B826C5384B00FAD831 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -387,6 +399,7 @@
 		A04946BA26C5384B00FAD831 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Jiopay-pgTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -404,6 +417,7 @@
 		A04946BB26C5384B00FAD831 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Jiopay-pgTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
