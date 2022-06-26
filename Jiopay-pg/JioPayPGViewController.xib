@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,8 +13,7 @@
             <connections>
                 <outlet property="ChildPopupContainer" destination="06y-CN-8QR" id="Dit-x6-AGM"/>
                 <outlet property="activityIndicator" destination="1JP-Hq-LE5" id="Tsz-Uj-eZH"/>
-                <outlet property="popupWebViewContainer" destination="DMr-W0-9Qg" id="pZq-U8-dA5"/>
-                <outlet property="popupWebViewController" destination="DMr-W0-9Qg" id="eft-wg-N94"/>
+                <outlet property="popupWebViewContainer" destination="DMr-W0-9Qg" id="1JD-4Q-6RP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -39,7 +39,7 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="-714.49275362318849" y="-257.14285714285711"/>
+            <point key="canvasLocation" x="-1814" y="-342"/>
         </view>
     </objects>
     <resources>

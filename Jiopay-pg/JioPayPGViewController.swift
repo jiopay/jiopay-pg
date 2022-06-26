@@ -51,13 +51,12 @@ enum jsEvents {
     var childReturnURL: String = ""
     var errorLabel: UILabel?
     
-    @IBOutlet var popupWebViewContainer: UIView!
-    
     var rootController: UIViewController?
     //    var parentAppController: UIViewController?
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var ChildPopupContainer: UIView!
     
+    @IBOutlet var popupWebViewContainer: UIView!
     public init() {
         let pgBundle = Bundle(for: JioPayPGViewController.self)
         super.init(nibName: "JioPayPGViewController", bundle: pgBundle)
