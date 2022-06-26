@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7C7F46F42868CA7800643108 /* Jiopay_pg.docc in Sources */ = {isa = PBXBuildFile; fileRef = 7C7F46F32868CA7800643108 /* Jiopay_pg.docc */; };
 		7C7F46FA2868CA7800643108 /* Jiopay_pg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C7F46EF2868CA7800643108 /* Jiopay_pg.framework */; };
 		7C7F46FF2868CA7800643108 /* Jiopay_pgTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7F46FE2868CA7800643108 /* Jiopay_pgTests.swift */; };
 		7C7F47002868CA7800643108 /* Jiopay_pg.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C7F46F22868CA7800643108 /* Jiopay_pg.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7C7F470D2868CAF600643108 /* JioPayPGViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7F470B2868CAF600643108 /* JioPayPGViewController.swift */; };
-		7C7F470E2868CAF600643108 /* JioPayPGViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C7F470C2868CAF600643108 /* JioPayPGViewController.xib */; };
+		7C7F47172868EAE400643108 /* JioPayPGViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7F47152868EAE400643108 /* JioPayPGViewController.swift */; };
+		7C7F47182868EAE400643108 /* JioPayPGViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C7F47162868EAE400643108 /* JioPayPGViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,11 +27,10 @@
 /* Begin PBXFileReference section */
 		7C7F46EF2868CA7800643108 /* Jiopay_pg.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Jiopay_pg.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C7F46F22868CA7800643108 /* Jiopay_pg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Jiopay_pg.h; sourceTree = "<group>"; };
-		7C7F46F32868CA7800643108 /* Jiopay_pg.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Jiopay_pg.docc; sourceTree = "<group>"; };
 		7C7F46F92868CA7800643108 /* Jiopay-pgTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Jiopay-pgTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C7F46FE2868CA7800643108 /* Jiopay_pgTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jiopay_pgTests.swift; sourceTree = "<group>"; };
-		7C7F470B2868CAF600643108 /* JioPayPGViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JioPayPGViewController.swift; sourceTree = "<group>"; };
-		7C7F470C2868CAF600643108 /* JioPayPGViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JioPayPGViewController.xib; sourceTree = "<group>"; };
+		7C7F47152868EAE400643108 /* JioPayPGViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JioPayPGViewController.swift; sourceTree = "<group>"; };
+		7C7F47162868EAE400643108 /* JioPayPGViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JioPayPGViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,9 +74,8 @@
 			isa = PBXGroup;
 			children = (
 				7C7F46F22868CA7800643108 /* Jiopay_pg.h */,
-				7C7F46F32868CA7800643108 /* Jiopay_pg.docc */,
-				7C7F470B2868CAF600643108 /* JioPayPGViewController.swift */,
-				7C7F470C2868CAF600643108 /* JioPayPGViewController.xib */,
+				7C7F47152868EAE400643108 /* JioPayPGViewController.swift */,
+				7C7F47162868EAE400643108 /* JioPayPGViewController.xib */,
 			);
 			path = "Jiopay-pg";
 			sourceTree = "<group>";
@@ -153,6 +150,7 @@
 				TargetAttributes = {
 					7C7F46EE2868CA7800643108 = {
 						CreatedOnToolsVersion = 13.1;
+						LastSwiftMigration = 1310;
 					};
 					7C7F46F82868CA7800643108 = {
 						CreatedOnToolsVersion = 13.1;
@@ -183,7 +181,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C7F470E2868CAF600643108 /* JioPayPGViewController.xib in Resources */,
+				7C7F47182868EAE400643108 /* JioPayPGViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,8 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C7F46F42868CA7800643108 /* Jiopay_pg.docc in Sources */,
-				7C7F470D2868CAF600643108 /* JioPayPGViewController.swift in Sources */,
+				7C7F47172868EAE400643108 /* JioPayPGViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +347,7 @@
 		7C7F47042868CA7800643108 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -369,6 +367,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -377,6 +376,7 @@
 		7C7F47052868CA7800643108 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

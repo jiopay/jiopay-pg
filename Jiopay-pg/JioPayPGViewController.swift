@@ -1,3 +1,10 @@
+//
+//  JioPayPGViewController.swift
+//  Jiopay-pg
+//
+//  Created by Darshan2 Patil on 27/06/22.
+//
+
 import Foundation
 import WebKit
 import UIKit
@@ -29,7 +36,7 @@ enum jsEvents {
     var childPopupWebView: WKWebView?
     //weak var delegate: PGWebViewDelegate?
     var delegate: JioPayDelegate?
-    @IBOutlet weak var containerView: UIView!
+
     
     var appAccessToken: String = ""
     var appIdToken: String = ""
@@ -44,12 +51,12 @@ enum jsEvents {
     var childReturnURL: String = ""
     var errorLabel: UILabel?
     
+    @IBOutlet var popupWebViewContainer: UIView!
+    
     var rootController: UIViewController?
     //    var parentAppController: UIViewController?
-    @IBOutlet weak var popupWebViewContainer: UIView!
-    @IBOutlet weak var ChildPopupContainer: UIView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var ChildPopupContainer: UIView!
     
     public init() {
         let pgBundle = Bundle(for: JioPayPGViewController.self)
@@ -348,5 +355,6 @@ extension UIViewController {
     }
     
 }
+
 
 
