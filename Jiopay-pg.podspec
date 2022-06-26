@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Jiopay-pg"
-  spec.version      = "0.0.9"
+  spec.version      = "0.0.10"
   spec.summary      = "Library for accessing UAT jiopay payment checkout"
 
   spec.description  = <<-DESC
@@ -19,6 +19,7 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/jiopay/jiopay-pg.git", :tag => "#{spec.version}" }
 
   spec.source_files  = "Jiopay-pg/**/*.{h,m,swift}"
+  spec.resources = "Jiopay-pg/**/*.{xib}"
   #spec.source_files  = "Classes", "Classes/**/*.{h,m}"
   #spec.exclude_files = "Classes/Exclude"
 
