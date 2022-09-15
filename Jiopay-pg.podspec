@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Jiopay-pg"
-  spec.version      = "0.0.10"
+  spec.version      = "0.0.19"
   spec.summary      = "Library for accessing UAT jiopay payment checkout"
 
   spec.description  = <<-DESC
