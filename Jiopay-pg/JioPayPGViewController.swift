@@ -14,7 +14,7 @@ let SCREEN_HEIGHT = UIScreen.main.bounds.height
 
 enum env {
     static let PP = "https://pp-checkout.jiopay.com:8443/"
-    static let SIT = "http://psp-mandate-merchant-sit.jiomoney.com:3003/pg"
+    static let SIT = "https://psp-mandate-merchant-sit.jiomoney.com:3003/pg"
     static let PROD = "https://checkout.jiopay.com"
 }
 
@@ -106,11 +106,11 @@ enum jsEvents {
            self.delegate = jioPayDelegate
            self.modalPresentationStyle = .fullScreen
            self.rootController?.present(self, animated: true, completion: nil)
-           self.parseData(data: jioPayData, url: env.PROD)
+           self.parseData(data: jioPayData)
         }
     }
     
-    func parseData(data:[AnyHashable:Any], url: String) {
+    func parseData(data:[AnyHashable:Any]) {
         
         if let dict = data as NSDictionary? as! [String: Any]?  {
             intentId = dict["intentid"] as! String
@@ -131,11 +131,31 @@ enum jsEvents {
               brandColor = (theme!["brandColor"] ?? "") as! String
               headingText = (theme!["headingText"] ?? "") as! String
             }
+            let url=self.getPgUrl(data: data)
             loadWebView(envUrl:url)
             
         }
     }
+    func getPgUrl(data:[AnyHashable:Any]) -> String {
+        var url:String=env.PROD
+        let buildVariant=data["buildVariant"]  as? String
+        switch buildVariant {
+        case "sit":
+            url=env.SIT
+            break;
+        case "pp":
+            url=env.PP
+            break;
+         default :
+            url=env.PROD
+            break;
+        }
+        return url;
+       
+    }
 }
+
+
 
 extension JioPayPGViewController : WKScriptMessageHandler, WKUIDelegate, UIScrollViewDelegate, UINavigationControllerDelegate {
     
