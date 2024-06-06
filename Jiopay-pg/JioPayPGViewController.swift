@@ -14,8 +14,8 @@ let SCREEN_HEIGHT = UIScreen.main.bounds.height
 
 enum env {
     static let PP = "https://pp-checkout.jiopay.com:8443/"
-    static let SIT = "https://psp-mandate-merchant-sit.jiomoney.com:3003/pg"
-    static let PROD = "https://checkout.jiopay.com"
+    static let SIT = "https://psp-mandate-merchant-sit.jiomoney.com:3003/pg/"
+    static let PROD = "https://checkout.jiopay.com/"
 }
 
 enum jsEvents {
@@ -44,6 +44,7 @@ enum jsEvents {
     var cvv: String = ""
     var vaultId: String = ""
     var checkout: String = ""
+    var  urlToLoad:String=""
     public var urlParams: String = ""
     var brandColor: String = ""
     var bodyBgColor: String = ""
@@ -133,9 +134,9 @@ enum jsEvents {
               brandColor = (theme!["brandColor"] ?? "") as! String
               headingText = (theme!["headingText"] ?? "") as! String
             }
-            let url=self.getPgUrl(data: data)
-            NSLog("inside IOS SDK parseData method with url : %@  ",url)
-            loadWebView(envUrl:url)
+            self.urlToLoad=self.getPgUrl(data: data)
+            NSLog("inside IOS SDK parseData method with url : %@  ",self.urlToLoad)
+            loadWebView()
             
         }
     }
@@ -180,9 +181,9 @@ extension JioPayPGViewController : WKScriptMessageHandler, WKUIDelegate, UIScrol
         self.view.layoutSubviews()
     }
     
-    func loadWebView(envUrl:String) {
-        NSLog("Inside loadWebView with envUrl = %@", envUrl)
-        let url = URL (string: envUrl)
+    func loadWebView() {
+        NSLog("Inside loadWebView with envUrl = %@", self.urlToLoad)
+        let url = URL (string: self.urlToLoad)
         let request = NSMutableURLRequest(url: url!)
         request.httpMethod = "POST"
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -262,10 +263,13 @@ extension JioPayPGViewController : WKScriptMessageHandler, WKUIDelegate, UIScrol
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: ((WKNavigationActionPolicy) -> Void)) {
         
         let redirectUrlStr = navigationAction.request.url?.absoluteString
+        let pgIntermidiateReturnUrl=getIntermidiateReturnUrl()
+        print("htag pgIntermidiateReturnUrl="+pgIntermidiateReturnUrl)
+
         if self.webView != nil {
-            if !self.parentReturnURL.isEmpty && redirectUrlStr!.hasPrefix(self.parentReturnURL) {
+            if redirectUrlStr!.contains(pgIntermidiateReturnUrl) {
                 let txnId = navigationAction.request.url?.queryParameters?["tid"]
-                let intentId = navigationAction.request.url?.queryParameters?["intentid"]
+                let intentId = navigationAction.request.url?.queryParameters?["intentId"]
                 webView.stopLoading()
                 decisionHandler(.cancel)
                 webViewDidClose(webView)
@@ -277,6 +281,15 @@ extension JioPayPGViewController : WKScriptMessageHandler, WKUIDelegate, UIScrol
         else  {
             decisionHandler(.allow)
         }
+    }
+    
+    func getIntermidiateReturnUrl() -> String {
+        var pgIntermidiateReturnUrl=self.urlToLoad+"transaction/details"
+        if let range = pgIntermidiateReturnUrl.range(of: "//") {
+            pgIntermidiateReturnUrl = String(pgIntermidiateReturnUrl[range.upperBound...])
+        }
+        return pgIntermidiateReturnUrl;
+       
     }
     
     public func webViewDidClose(_ webView: WKWebView) {
