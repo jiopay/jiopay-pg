@@ -101,7 +101,9 @@ enum jsEvents {
     }
     
     @objc public func open(_ viewController: UIViewController, withData jioPayData:[AnyHashable:Any],delegate jioPayDelegate: JioPayDelegate){
+        NSLog("inside IOS SDK open methood  ")
         DispatchQueue.main.async {
+            NSLog("inside IOS SDK DispatchQueue call")
            self.rootController = viewController
            self.delegate = jioPayDelegate
            self.modalPresentationStyle = .fullScreen
@@ -111,7 +113,7 @@ enum jsEvents {
     }
     
     func parseData(data:[AnyHashable:Any]) {
-        
+        NSLog("inside IOS SDK parseData method with data : %@  ",data)
         if let dict = data as NSDictionary? as! [String: Any]?  {
             intentId = dict["intentid"] as! String
             let theme  = dict["theme"] as? [String:Any]
@@ -132,6 +134,7 @@ enum jsEvents {
               headingText = (theme!["headingText"] ?? "") as! String
             }
             let url=self.getPgUrl(data: data)
+            NSLog("inside IOS SDK parseData method with url : %@  ",url)
             loadWebView(envUrl:url)
             
         }
@@ -178,6 +181,7 @@ extension JioPayPGViewController : WKScriptMessageHandler, WKUIDelegate, UIScrol
     }
     
     func loadWebView(envUrl:String) {
+        NSLog("Inside loadWebView with envUrl = %@", envUrl)
         let url = URL (string: envUrl)
         let request = NSMutableURLRequest(url: url!)
         request.httpMethod = "POST"
@@ -187,10 +191,12 @@ extension JioPayPGViewController : WKScriptMessageHandler, WKUIDelegate, UIScrol
         post = post.replacingOccurrences(of: "+", with: "%2b")
         request.httpBody = post.data(using: .utf8)
         showActivityIndicator(show: true)
+        NSLog("Inside loadWebView with loadurl = %@", request)
         webView.load(request as URLRequest)
     }
     
     public func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        NSLog("start loading")
         print("start loading")
     }
     
